@@ -101,6 +101,8 @@ de compilación personalizados.
 Cada push a `main` activa automáticamente un nuevo despliegue.
 
 ### Comprobación de actualización
-La aplicación muestra "Versión 1.0" en el pie de página.
-Se realizará una actualización a "Versión 1.1" para comprobar
-el despliegue automático en ambas plataformas.
+Se cambió la versión visible de 1.0 a 1.1 y se enviaron los
+cambios a la rama main mediante git push.
+
+GitHub Pages y Vercel actualizaron automáticamente la aplicación.
+Se verificó que ambas direcciones públicas mostraran Versión 1.1.

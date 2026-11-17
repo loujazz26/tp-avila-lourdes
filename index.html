@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Explorador de episodios | Rick and Morty</title>
+
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <header class="encabezado">
+    <h1>Explorador de episodios</h1>
+    <p>Rick and Morty · Variante C</p>
+  </header>
+
+  <main class="contenedor">
+    <section aria-labelledby="titulo-buscador">
+      <h2 id="titulo-buscador">Busca un episodio</h2>
+
+      <p>
+        Escribe un nombre, selecciona una temporada o combina ambos criterios.
+      </p>
+
+      <form id="formulario-busqueda">
+        <div class="campo">
+          <label for="nombre">Nombre del episodio</label>
+          <input
+            type="search"
+            id="nombre"
+            name="nombre"
+            placeholder="Ejemplo: Rick"
+          >
+        </div>
+
+        <div class="campo">
+          <label for="temporada">Temporada</label>
+          <select id="temporada" name="temporada">
+            <option value="">Todas</option>
+            <option value="S01">Temporada 1</option>
+            <option value="S02">Temporada 2</option>
+            <option value="S03">Temporada 3</option>
+            <option value="S04">Temporada 4</option>
+            <option value="S05">Temporada 5</option>
+          </select>
+        </div>
+
+        <button type="submit" id="boton-buscar">
+          Buscar episodios
+        </button>
+      </form>
+    </section>
+
+    <section aria-labelledby="titulo-resultados">
+      <h2 id="titulo-resultados">Resultados</h2>
+
+      <p id="mensaje" role="status" aria-live="polite">
+        Ingresa un nombre o selecciona una temporada para comenzar.
+      </p>
+
+      <div id="resultados" class="grilla-resultados"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Desarrollado por Lourdes Jazmin Avila Olmedo</p>
+    <p>Fundamentos de Desarrollo Web · 2026</p>
+  </footer>
+</body>
+</html>

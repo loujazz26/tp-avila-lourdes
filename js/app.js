@@ -5,6 +5,8 @@ const campoTemporada = document.getElementById("temporada");
 const botonBuscar = document.getElementById("boton-buscar");
 const contenedorResultados = document.getElementById("resultados");
 const mensaje = document.getElementById("mensaje");
+const botonLimpiar = document.getElementById("boton-limpiar");
+
 
 // 2. Mostrar un mensaje en la página
 const mostrarMensaje = (texto) => {
@@ -105,6 +107,7 @@ const buscarEpisodios = async (nombre, temporada) => {
   }
 
   botonBuscar.disabled = true;
+  botonLimpiar.disabled = true;
   botonBuscar.textContent = "Buscando…";
   contenedorResultados.replaceChildren();
   mostrarMensaje("Buscando…");
@@ -127,6 +130,7 @@ const buscarEpisodios = async (nombre, temporada) => {
     );
   } finally {
     botonBuscar.disabled = false;
+    botonLimpiar.disabled = false;
     botonBuscar.textContent = "Buscar episodios";
   }
 };
@@ -214,3 +218,26 @@ formulario.addEventListener("submit", async (evento) => {
 
 // 12. Restaurar la búsqueda al abrir la página
 restaurarBusqueda();
+
+
+// Limpiar el formulario, los resultados y la búsqueda guardada
+const limpiarBusqueda = () => {
+  formulario.reset();
+  contenedorResultados.replaceChildren();
+
+  mostrarMensaje(
+    "Ingresa un nombre o selecciona una temporada para comenzar."
+  );
+
+  try {
+    localStorage.removeItem("ultimaBusquedaEpisodios");
+  } catch (error) {
+    mostrarMensaje(
+      "Se limpió la página, pero no se pudo borrar la búsqueda guardada."
+    );
+  }
+
+  campoNombre.focus();
+};
+
+botonLimpiar.addEventListener("click", limpiarBusqueda);

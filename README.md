@@ -12,7 +12,7 @@ Variante del TP: C · Episodios
 
 ## Sitios publicados
 - GitHub Pages: https://loujazz26.github.io/tp-avila-lourdes/
-- Segunda plataforma: pendiente de configurar.
+- Vercel: https://tp-avila-lourdes.vercel.app/
 
 ## Captura
 ![Explorador de episodios](img/captura.png)
@@ -39,6 +39,7 @@ con hasta 20 episodios por consulta.
 - localStorage.
 - Git y GitHub.
 - GitHub Pages.
+- Vercel
 
 ## API utilizada
 Endpoint: https://rickandmortyapi.com/api/episode
@@ -90,8 +91,14 @@ https://github.com/loujazz26/tp-avila-lourdes/pull/1
 La publicación utiliza la rama `main` y la carpeta raíz `/ (root)`.
 Los cambios enviados a esa rama activan la actualización del sitio.
 
-### Segunda plataforma
-Pendiente de configurar y documentar.
+### Vercel
+El proyecto está conectado al repositorio de GitHub y utiliza
+la rama `main` para producción.
+
+Configuración: preset Other, directorio raíz ./ y sin comandos
+de compilación personalizados.
+
+Cada push a `main` activa automáticamente un nuevo despliegue.
 
 ### Comprobación de actualización
 La aplicación muestra "Versión 1.0" en el pie de página.

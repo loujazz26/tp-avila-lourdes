@@ -1,42 +1,99 @@
 # Explorador de episodios de Rick and Morty
 
+Aplicación web que permite consultar episodios por nombre y temporada.
+Presenta los resultados en tarjetas y recuerda la última búsqueda.
+
 ## Autora
-Lourdes Jazmin Avila Olmedo
+Lourdes Ávila
 
-## Asignatura
-Fundamentos de Desarrollo Web · Ingeniería en Informática
-
-## Variante
-C · Episodios  
+Asignatura: Fundamentos de Desarrollo Web · UCSA  
+Variante del TP: C · Episodios  
 Último dígito de cédula: 8
 
-## Descripción
-Página web que permite buscar episodios de Rick and Morty
-por nombre y temporada, utilizando una API REST.
+## Sitios publicados
+- GitHub Pages: https://loujazz26.github.io/tp-avila-lourdes/
+- Segunda plataforma: pendiente de configurar.
 
-Cada tarjeta muestra el nombre, el código del episodio,
-la fecha de emisión y la cantidad de personajes.
+## Captura
+![Explorador de episodios](img/captura.png)
 
-La página informa los estados de carga, las búsquedas sin
-resultados y los errores de conexión. También guarda la
-última búsqueda en localStorage y la restaura al recargar.
+## Funcionalidades
+- Búsqueda por nombre del episodio.
+- Filtro por temporada, desde S01 hasta S05.
+- Combinación de nombre y temporada en una misma consulta.
+- Tarjetas con nombre, código, fecha de emisión y cantidad de personajes.
+- Mensajes de carga, sin resultados y errores de conexión.
+- Guardado y recuperación de la última búsqueda con localStorage.
+- Botón para limpiar los campos, los resultados y la búsqueda guardada.
+- Diseño adaptable a computadoras y celulares.
+- Número de versión visible en el pie de página.
 
-Se muestran hasta 20 episodios por consulta, correspondientes
-a la primera página de resultados de la API.
+La aplicación muestra la primera página de resultados de la API,
+con hasta 20 episodios por consulta.
 
-## Tecnologías utilizadas
-- HTML semántico.
-- CSS con Flexbox, Grid y diseño responsive.
-- JavaScript con fetch, async/await y localStorage.
+## Tecnologías
+- HTML5 semántico.
+- CSS3: variables, Flexbox, Grid y media queries.
+- JavaScript ES6+.
+- Fetch API con async/await.
+- localStorage.
+- Git y GitHub.
+- GitHub Pages.
 
 ## API utilizada
-https://rickandmortyapi.com/api/episode
+Endpoint: https://rickandmortyapi.com/api/episode
 
-## Cómo utilizar
-1. Escribir un nombre o seleccionar una temporada.
-2. Presionar "Buscar episodios".
-3. Consultar las tarjetas de resultados.
-4. Recargar la página para recuperar la última búsqueda.
+Parámetros:
+- `name`: nombre del episodio.
+- `episode`: código de temporada, por ejemplo `S01`.
 
-## Captura de pantalla
-![Página con resultados de búsqueda](img/captura.png)
+Ejemplo:
+https://rickandmortyapi.com/api/episode?name=rick&episode=S01
+
+## Estructura del proyecto
+```text
+tp-avila-lourdes/
+├── .gitignore          # Archivos y carpetas excluidos de Git
+├── index.html          # Estructura y formulario
+├── README.md           # Documentación del proyecto
+├── css/
+│   └── estilos.css     # Diseño y adaptación a celulares
+├── js/
+│   └── app.js          # Consultas, tarjetas y persistencia
+└── img/
+    └── captura.png     # Captura de la aplicación
+```
+
+## Cómo ejecutarlo localmente
+1. Tener Git instalado.
+2. Clonar el repositorio:
+
+```bash
+git clone https://github.com/loujazz26/tp-avila-lourdes.git
+```
+
+3. Abrir la carpeta descargada.
+4. Abrir `index.html` en el navegador o utilizar Live Server en VS Code.
+5. Contar con conexión a internet para consultar la API.
+
+No requiere instalar dependencias ni configurar claves de acceso.
+
+## Desarrollo con ramas
+La mejora del botón "Limpiar búsqueda" se desarrolló en la rama
+`feature/limpiar-busqueda` y se integró a `main` mediante un pull request.
+
+Pull request:
+https://github.com/loujazz26/tp-avila-lourdes/pull/1
+
+## Despliegue
+### GitHub Pages
+La publicación utiliza la rama `main` y la carpeta raíz `/ (root)`.
+Los cambios enviados a esa rama activan la actualización del sitio.
+
+### Segunda plataforma
+Pendiente de configurar y documentar.
+
+### Comprobación de actualización
+La aplicación muestra "Versión 1.0" en el pie de página.
+Se realizará una actualización a "Versión 1.1" para comprobar
+el despliegue automático en ambas plataformas.
